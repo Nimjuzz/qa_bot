@@ -14,7 +14,10 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port available to the world outside this container
-EXPOSE 5000
+EXPOSE 8080
 
-# Run app.py when the container launches
-CMD ["python", "./app.py"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
+# EXPOSE 5000
+
+# # Run app.py when the container launches
+# CMD ["python", "./app.py"]
