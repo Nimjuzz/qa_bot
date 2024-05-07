@@ -6,7 +6,7 @@ from langchain.document_loaders.pdf import PyPDFDirectoryLoader
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain.vectorstores.chroma import Chroma
-from langchain import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 def load_environment_variables():
     load_dotenv()
