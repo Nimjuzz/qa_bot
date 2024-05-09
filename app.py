@@ -51,7 +51,7 @@ def main(question):
     chunks = split_documents(documents)
     context = get_context(question, chunks, chroma_path)
 
-    openai_api_key = "sk-proj-T2Q2Ru23L2XpeZUqertzT3BlbkFJBH258BZxRjOvA0yIe7vD"
+    openai_api_key = os.getenv("OPENAI_API_KEY")
     llm = ChatOpenAI(openai_api_key=openai_api_key, model="gpt-3.5-turbo")
     print(openai_api_key)
 
