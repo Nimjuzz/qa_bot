@@ -51,9 +51,9 @@ def main(question):
     chunks = split_documents(documents)
     context = get_context(question, chunks, chroma_path)
 
-    openai_api_key = "sk-proj-VCWBpvYizoRMcBIP9muUT3BlbkFJ1IQFasMMeaQVOEr0Vk0t"
-    llm = ChatOpenAI(openai_api_key=openai_api_key, model="gpt-3.5-turbo")
-    print(openai_api_key)
+    api_key = os.getenv("OPENAI_API_KEY")
+    llm = ChatOpenAI(api_key=api_key, model="gpt-3.5-turbo")
+    print(api_key)
 
     template = """
     You are a Q&A assistant for university students.
